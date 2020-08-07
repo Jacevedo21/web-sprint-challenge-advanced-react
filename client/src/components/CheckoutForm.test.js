@@ -33,5 +33,15 @@ test("form shows success message on submit with form details", () => {
     const submitBtn = screen.getByRole('button', {name: /Checkout/i })
     fireEvent.click(submitBtn)
 
-    // screen.debug()
+    expect(screen.getByText(/ooga/i)).toBeInTheDocument()
+    expect(screen.getByText(/booga/i)).toBeInTheDocument()
+    expect(screen.getByText(/333 awesome st/i)).toBeInTheDocument()
+    expect(screen.getByText(/awesomeville/i)).toBeInTheDocument()
+    expect(screen.getByText(/cali/i)).toBeInTheDocument()
+    expect(screen.getByText(/00103/i)).toBeInTheDocument()
+
+    expect(screen.getByText(/You have ordered some plants! Woo-hoo!/i)).toBeInTheDocument()
+    expect(screen.getByText(/Your new green friends will be shipped to:/i)).toBeInTheDocument()
+
+    screen.debug()
 });
